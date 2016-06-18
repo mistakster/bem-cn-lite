@@ -31,6 +31,12 @@ describe('module', function () {
     block.should.equal('block mixin');
   });
 
+  it('should generate block with mixin if an empty object is provided as modifiers', function () {
+    var block = b({}, 'mixin');
+
+    block.should.equal('block mixin');
+  });
+
   it('should generate block with modifier and mixin', function () {
     var block = b({modifier: 'value'}, 'mixin');
 
