@@ -30,7 +30,7 @@ You can generate block-level class name with function `b`.
 
 If you provide an object as first argument, then it treats as modifiers for the block.
 
-```
+```js
 // 'button'
 b(); 
 // 'button button_modifier'
@@ -43,7 +43,7 @@ b({modifier: 'value'});
 
 First argument must be string. Second argument can be an object.
 
-```
+```js
 // 'button__icon'
 b('icon'); 
 // 'button__icon button__icon_modifier'
@@ -56,7 +56,7 @@ b('icon', {modifier: 'value'});
 
 Sometime, you might like to have a mixin on your block.
 
-```
+```js
 // 'button mixin'
 b(false, 'mixin');
 // 'button button_modifier mixin'
@@ -65,7 +65,7 @@ b({modifier: true}, 'mixin');
 
 Also, mixin on element is welcome too.
 
-```
+```js
 // 'button__icon mixin'
 b('icon', 'mixin'); 
 // 'button__icon button__icon_modifier mixin'
@@ -77,7 +77,7 @@ b('icon', {modifier: true}, 'mixin');
 It might you’d like to have an access to original methods of the `bem-cn`
 generator in rare case.
 
-```
+```js
 // 'block__icon icon is-loading'
 b.builder()('icon').is({'loading': true}).mix('icon')()
 ```
