@@ -1,0 +1,11 @@
+{
+  "name": "bem-cn-lite",
+  "version": "1.0.0",
+  "description": "Lite version of the friendly BEM-style class name generator, which is great for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
+  "license": "MIT"
+}
