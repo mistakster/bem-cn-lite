@@ -4,8 +4,28 @@
   "description": "Lite version of the friendly BEM-style class name generator, which is great for React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/*-spec.js"
   },
   "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mistakster/bem-cn-lite.git"
+  },
+  "keywords": [
+    "BEM",
+    "React",
+    "class",
+    "classname",
+    "block",
+    "element",
+    "modifier"
+  ],
+  "dependencies": {
+    "bem-cn": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "should": "^9.0.2"
+  }
 }
