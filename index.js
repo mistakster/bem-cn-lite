@@ -6,22 +6,22 @@ module.exports = function (blockName) {
   var b = bemClassName(blockName);
 
   function element(elementName, modifiers, mixin) {
-    // normalize arguments
-    if (typeof elementName === 'string') {
-      // going to create an element
-      if (typeof modifiers === 'string') {
-        mixin = modifiers;
-        modifiers = null;
-      }
-    } else {
-      // going to create a block
+    var result = b(elementName);
+
+    if (typeof elementName !== 'string' || typeof elementName === 'string' && typeof modifiers === 'string') {
       mixin = modifiers;
       modifiers = null;
     }
 
-    var result = b(elementName, modifiers);
+    if (modifiers) {
+      result = result(modifiers);
+    }
 
-    return (mixin ? result.mix(mixin) : result).toString();
+    if (mixin) {
+      result = result.mix(mixin);
+    }
+
+    return result.toString();
   }
 
   element.builder = function () {
