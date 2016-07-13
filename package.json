@@ -22,7 +22,7 @@
     "modifier"
   ],
   "dependencies": {
-    "bem-cn": "^2.0.0"
+    "bem-cn": "2.1.x"
   },
   "devDependencies": {
     "mocha": "^2.5.3",

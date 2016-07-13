@@ -1,6 +1,6 @@
 "use strict";
 
-var bemClassName = require('bem-cn').default;
+var bemClassName = require('bem-cn');
 
 module.exports = function (blockName) {
   var b = bemClassName(blockName);
