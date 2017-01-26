@@ -28,5 +28,13 @@ module.exports = function (blockName) {
     return b;
   };
 
+  element.setup = function (config) {
+    bemClassName.setup(config);
+  };
+
+  element.reset = function () {
+    bemClassName.reset();
+  };
+
   return element;
 };

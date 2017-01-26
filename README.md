@@ -72,6 +72,34 @@ b('icon', 'mixin');
 b('icon', {modifier: true}, 'mixin');
 ```
 
+### Custom settings
+
+You can use alternative naming schemes for your BEM naming convention. Just call `setup` method:
+
+```js
+// Two Dashes style with namespaces
+var config = {
+    ns: 'ns-',
+    el: '__',
+    mod: '--',
+    modValue: '-'
+};
+
+b.setup(config);
+
+// 'ns-button__icon ns-button__icon--modifier-value'
+b('icon', {modifier: 'value'});
+```
+
+... and reset to default settings, if you need it.
+
+```js
+b.reset();
+
+// 'button__icon button__icon_modifier'
+b('icon', {modifier: true});
+```
+
 ### Builder
 
 It might you’d like to have an access to original methods of the `bem-cn`
