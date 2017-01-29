@@ -74,19 +74,29 @@ b('icon', 'mixin');
 b('icon', {modifier: true}, 'mixin');
 ```
 
+### Builder
+
+It might you’d like to have an access to original methods of the `bem-cn`
+generator in rare case.
+
+```js
+// 'block__icon icon is-loading'
+b.builder()('icon').is({'loading': true}).mix('icon')()
+```
+
 ### Custom settings
 
-You can use alternative naming schemes for your BEM naming convention. Just call `setup` method:
+You can use alternative naming schemes for your BEM naming convention. Just call static `setup` method on `bem-cn-lite` module:
 
 ```js
 var block = require('bem-cn-lite');
 
 // Two Dashes style with namespaces
 block.setup({
-    ns: 'ns-',
-    el: '__',
-    mod: '--',
-    modValue: '-'
+  ns: 'ns-',
+  el: '__',
+  mod: '--',
+  modValue: '-'
 });
 
 // 'ns-button__icon ns-button__icon--modifier-value'
@@ -100,14 +110,4 @@ block.reset();
 
 // 'button__icon button__icon_modifier'
 b('icon', {modifier: true});
-```
-
-### Builder
-
-It might you’d like to have an access to original methods of the `bem-cn`
-generator in rare case.
-
-```js
-// 'block__icon icon is-loading'
-b.builder()('icon').is({'loading': true}).mix('icon')()
 ```
