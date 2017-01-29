@@ -77,15 +77,15 @@ b('icon', {modifier: true}, 'mixin');
 You can use alternative naming schemes for your BEM naming convention. Just call `setup` method:
 
 ```js
+var block = require('bem-cn-lite');
+
 // Two Dashes style with namespaces
-var config = {
+block.setup({
     ns: 'ns-',
     el: '__',
     mod: '--',
     modValue: '-'
-};
-
-b.setup(config);
+});
 
 // 'ns-button__icon ns-button__icon--modifier-value'
 b('icon', {modifier: 'value'});
@@ -94,7 +94,7 @@ b('icon', {modifier: 'value'});
 ... and reset to default settings, if you need it.
 
 ```js
-b.reset();
+block.reset();
 
 // 'button__icon button__icon_modifier'
 b('icon', {modifier: true});
