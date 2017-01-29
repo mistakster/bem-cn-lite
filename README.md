@@ -1,5 +1,7 @@
 # bem-cn-lite
 
+[![Build Status](https://travis-ci.org/mistakster/bem-cn-lite.svg?branch=master)](https://travis-ci.org/mistakster/bem-cn-lite)
+
 Lite version of the friendly BEM-style class name generator, which is great for React
 
 It’s a wrapper function for [bem-cn](https://github.com/albburtsev/bem-cn) module.
