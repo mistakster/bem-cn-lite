@@ -2,7 +2,7 @@
 
 var bemClassName = require('bem-cn');
 
-module.exports = function (blockName) {
+function bemClassNameLite(blockName) {
   var b = bemClassName(blockName);
 
   function element(elementName, modifiers, mixin) {
@@ -28,13 +28,15 @@ module.exports = function (blockName) {
     return b;
   };
 
-  element.setup = function (config) {
-    bemClassName.setup(config);
-  };
-
-  element.reset = function () {
-    bemClassName.reset();
-  };
-
   return element;
+}
+
+bemClassNameLite.setup = function (config) {
+  bemClassName.setup(config);
 };
+
+bemClassNameLite.reset = function () {
+  bemClassName.reset();
+};
+
+module.exports = bemClassNameLite;

@@ -4,7 +4,7 @@ require('should');
 
 var generator = require('../index');
 
-describe('Config', function () {
+describe('config', function () {
   var config = {
     ns: 'ns-',
     el: '~~',
@@ -14,8 +14,9 @@ describe('Config', function () {
 
   it('should set custom settings', function () {
 
-    var b = generator('block')
-    b.setup(config);
+    generator.setup(config);
+
+    var b = generator('block');
 
     b().toString().should.equal('ns-block');
 
@@ -33,7 +34,7 @@ describe('Config', function () {
 
     b('element', 'mix').toString().should.equal('ns-block~~element mix');
 
-    b.reset();
+    generator.reset();
   });
 
 });
