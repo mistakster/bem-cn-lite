@@ -25,7 +25,7 @@
     "bem-cn": "2.1.x"
   },
   "devDependencies": {
-    "mocha": "^2.5.3",
-    "should": "^9.0.2"
+    "mocha": "^3.2.0",
+    "should": "^11.2.0"
   }
 }
