@@ -1,3 +1,5 @@
+.travis.yml
+.editorconfig
 .idea
 *.iml
 tests
