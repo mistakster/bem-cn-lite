@@ -1,21 +1,19 @@
 "use strict";
 
-var bemClassName = require('bem-cn');
+var { setup } = require('bem-cn');
+
+var bemClassName = setup();
 
 function bemClassNameLite(blockName) {
   var b = bemClassName(blockName);
 
   function element(elementName, modifiers, mixin) {
-    var result = b(elementName);
-
     if (typeof elementName !== 'string' || typeof elementName === 'string' && typeof modifiers === 'string') {
       mixin = modifiers;
       modifiers = null;
     }
 
-    if (modifiers) {
-      result = result(modifiers);
-    }
+    var result = b(elementName, modifiers);
 
     if (mixin) {
       result = result.mix(mixin);
@@ -32,11 +30,11 @@ function bemClassNameLite(blockName) {
 }
 
 bemClassNameLite.setup = function (config) {
-  bemClassName.setup(config);
+  bemClassName = setup(config);
 };
 
 bemClassNameLite.reset = function () {
-  bemClassName.reset();
+  bemClassName = setup();
 };
 
 module.exports = bemClassNameLite;

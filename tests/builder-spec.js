@@ -21,7 +21,7 @@ describe('builder', function () {
 
     builder.should.have.properties(['state', 'is', 'has', 'mix']);
 
-    builder('icon').is({'loading': true}).mix('icon')()
+    builder('icon').is({'loading': true}).mix('icon').toString()
       .should.equal('block__icon is-loading icon');
   })
 });
