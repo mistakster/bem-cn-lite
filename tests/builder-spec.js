@@ -2,26 +2,26 @@
 
 require('should');
 
-var generator = require('../index');
+const generator = require('../build').default;
 
-var b = generator('block');
+const b = generator('block');
 
 describe('builder', function () {
   it('should exists in block', function () {
     b.should.have.property('builder').Function();
 
-    var builder = b.builder();
+    const builder = b.builder();
 
     builder().should.equal('block');
 
   });
 
   it('should has more methods', function () {
-    var builder = b.builder();
+    const builder = b.builder();
 
     builder.should.have.properties(['state', 'is', 'has', 'mix']);
 
-    builder('icon').is({'loading': true}).mix('icon')()
+    builder('icon').is({'loading': true}).mix('icon').toString()
       .should.equal('block__icon is-loading icon');
   })
 });

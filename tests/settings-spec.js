@@ -2,10 +2,10 @@
 
 require('should');
 
-var generator = require('../index');
+const generator = require('../build').default;
 
 describe('config', function () {
-  var config = {
+  const config = {
     ns: 'ns-',
     el: '~~',
     mod: '--',
@@ -24,7 +24,7 @@ describe('config', function () {
 
     b({ mod: true }).toString().should.equal('ns-block ns-block--mod');
 
-    b(false, 'mix').toString().should.equal('ns-block mix');
+    b(null, 'mix').toString().should.equal('ns-block mix');
 
     b('element').toString().should.equal('ns-block~~element');
 
@@ -33,8 +33,6 @@ describe('config', function () {
     b('element', { mod: true }).toString().should.equal('ns-block~~element ns-block~~element--mod');
 
     b('element', 'mix').toString().should.equal('ns-block~~element mix');
-
-    generator.reset();
   });
 
 });
