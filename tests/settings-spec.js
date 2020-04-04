@@ -33,6 +33,8 @@ describe('config', function () {
     b('element', { mod: true }).toString().should.equal('ns-block~~element ns-block~~element--mod');
 
     b('element', 'mix').toString().should.equal('ns-block~~element mix');
+
+    generator.reset();
   });
 
 });

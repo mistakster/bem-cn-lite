@@ -19,9 +19,9 @@ npm i --save bem-cn-lite
 ### Generator 
 
 ```js
-var block = require('bem-cn-lite');
+import block from 'bem-cn-lite';
 
-var b = block('button');
+const b = block('button');
 ```
 
 `b` is a class name generator which was bind to `button`.
@@ -89,7 +89,7 @@ b.builder()('icon').is({'loading': true}).mix('icon')()
 You can use alternative naming schemes for your BEM naming convention. Just call static `setup` method on `bem-cn-lite` module:
 
 ```js
-var block = require('bem-cn-lite');
+import block from 'bem-cn-lite';
 
 // Two Dashes style with namespaces
 block.setup({

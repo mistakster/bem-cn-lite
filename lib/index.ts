@@ -50,3 +50,7 @@ bemClassNameLite.bemClassName = bemClassName;
 bemClassNameLite.setup = function(config: BemSettings) {
   this.bemClassName = bemClassNameSetup(config);
 };
+
+bemClassNameLite.reset = function() {
+  this.bemClassName = bemClassName;
+};
