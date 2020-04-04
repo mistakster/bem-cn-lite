@@ -4,7 +4,7 @@ interface Modifications {
   [name: string]: string | boolean | undefined;
 }
 
-export default function bemClassNameLite(blockName: string) {
+function bemClassNameLite(blockName: string) {
   const b = bemClassNameLite.bemClassName(blockName);
 
   function element(elementName: string, modifiers: Modifications | null, mixin?: string): string;
@@ -54,3 +54,5 @@ bemClassNameLite.setup = function(config: BemSettings) {
 bemClassNameLite.reset = function() {
   this.bemClassName = bemClassName;
 };
+
+export default bemClassNameLite;
