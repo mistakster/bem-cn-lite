@@ -16,7 +16,7 @@ describe('config', function () {
 
     generator.setup(config);
 
-    var b = generator('block');
+    const b = generator('block');
 
     b().toString().should.equal('ns-block');
 
@@ -43,7 +43,7 @@ describe('config', function () {
 
     generator.reset();
 
-    var b = generator('block');
+    const b = generator('block');
 
     b().toString().should.equal('block');
 
