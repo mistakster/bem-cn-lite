@@ -7,7 +7,7 @@
     "build": "tsc",
     "clean": "rm -rf build",
     "prepublishOnly": "npm run build",
-    "test": "mocha tests/*-spec.js"
+    "test": "tsc && mocha tests/*-spec.js"
   },
   "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
   "license": "MIT",
