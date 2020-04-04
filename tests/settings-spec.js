@@ -60,8 +60,6 @@ describe('config', function () {
     b('element', {mod: true}).toString().should.equal('block__element block__element_mod');
 
     b('element', 'mix').toString().should.equal('block__element mix');
-
-    generator.reset();
   });
 
 });
