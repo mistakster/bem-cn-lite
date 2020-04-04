@@ -60,7 +60,7 @@ Sometime, you might like to have a mixin on your block.
 
 ```js
 // 'button mixin'
-b(false, 'mixin');
+b(null, 'mixin');
 // 'button button_modifier mixin'
 b({modifier: true}, 'mixin');
 ```
@@ -80,8 +80,8 @@ It might you’d like to have an access to original methods of the `bem-cn`
 generator in rare case.
 
 ```js
-// 'block__icon icon is-loading'
-b.builder()('icon').is({'loading': true}).mix('icon')()
+// 'block__icon is-loading icon'
+b.builder()('icon').is({'loading': true}).mix('icon').toString();
 ```
 
 ### Custom settings
@@ -98,6 +98,8 @@ block.setup({
   mod: '--',
   modValue: '-'
 });
+
+const b = block('button');
 
 // 'ns-button__icon ns-button__icon--modifier-value'
 b('icon', {modifier: 'value'});
