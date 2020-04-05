@@ -1,11 +1,13 @@
-import bemClassName, {setup as bemClassNameSetup, BemSettings} from 'bem-cn';
+import {setup as bemClassNameSetup, BemSettings} from 'bem-cn';
 
 interface Modifications {
   [name: string]: string | boolean | undefined;
 }
 
+let block = bemClassNameSetup();
+
 function bemClassNameLite(blockName: string) {
-  const b = bemClassNameLite.bemClassName(blockName);
+  const b = block(blockName);
 
   function element(elementName: string, modifiers: Modifications | null, mixin?: string): string;
   function element(elementName: string, mixin?: string): string;
@@ -41,14 +43,12 @@ function bemClassNameLite(blockName: string) {
   return element;
 }
 
-bemClassNameLite.bemClassName = bemClassName;
-
 bemClassNameLite.setup = function(config: BemSettings) {
-  this.bemClassName = bemClassNameSetup(config);
+  block = bemClassNameSetup(config);
 };
 
 bemClassNameLite.reset = function() {
-  this.bemClassName = bemClassName;
+  block = bemClassNameSetup();
 };
 
 export default bemClassNameLite;
