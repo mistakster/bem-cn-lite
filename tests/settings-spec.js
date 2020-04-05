@@ -17,21 +17,21 @@ describe('config', function () {
 
     const b = generator('block');
 
-    b().toString().should.equal('ns-block');
+    b().should.equal('ns-block');
 
-    b({ mod: 'value' }).toString().should.equal('ns-block ns-block--mod-value');
+    b({ mod: 'value' }).should.equal('ns-block ns-block--mod-value');
 
-    b({ mod: true }).toString().should.equal('ns-block ns-block--mod');
+    b({ mod: true }).should.equal('ns-block ns-block--mod');
 
-    b(null, 'mix').toString().should.equal('ns-block mix');
+    b(null, 'mix').should.equal('ns-block mix');
 
-    b('element').toString().should.equal('ns-block~~element');
+    b('element').should.equal('ns-block~~element');
 
-    b('element', { mod: 'value' }).toString().should.equal('ns-block~~element ns-block~~element--mod-value');
+    b('element', { mod: 'value' }).should.equal('ns-block~~element ns-block~~element--mod-value');
 
-    b('element', { mod: true }).toString().should.equal('ns-block~~element ns-block~~element--mod');
+    b('element', { mod: true }).should.equal('ns-block~~element ns-block~~element--mod');
 
-    b('element', 'mix').toString().should.equal('ns-block~~element mix');
+    b('element', 'mix').should.equal('ns-block~~element mix');
 
     generator.reset();
   });
@@ -43,20 +43,20 @@ describe('config', function () {
 
     const b = generator('block');
 
-    b().toString().should.equal('block');
+    b().should.equal('block');
 
-    b({ mod: 'value' }).toString().should.equal('block block_mod_value');
+    b({ mod: 'value' }).should.equal('block block_mod_value');
 
-    b({ mod: true }).toString().should.equal('block block_mod');
+    b({ mod: true }).should.equal('block block_mod');
 
-    b(null, 'mix').toString().should.equal('block mix');
+    b(null, 'mix').should.equal('block mix');
 
-    b('element').toString().should.equal('block__element');
+    b('element').should.equal('block__element');
 
-    b('element', { mod: 'value' }).toString().should.equal('block__element block__element_mod_value');
+    b('element', { mod: 'value' }).should.equal('block__element block__element_mod_value');
 
-    b('element', { mod: true }).toString().should.equal('block__element block__element_mod');
+    b('element', { mod: true }).should.equal('block__element block__element_mod');
 
-    b('element', 'mix').toString().should.equal('block__element mix');
+    b('element', 'mix').should.equal('block__element mix');
   });
 });
