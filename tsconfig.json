@@ -18,10 +18,10 @@
     "experimentalDecorators": true,
     "allowJs": false,
     "declaration": true,
-    "outDir": "build"
+    "outDir": "lib"
   },
   "include": [
-    "lib/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"

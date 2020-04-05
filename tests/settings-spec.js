@@ -2,7 +2,7 @@
 
 require('should');
 
-const generator = require('../build').default;
+const generator = require('../lib').default;
 
 describe('config', function () {
   const config = {

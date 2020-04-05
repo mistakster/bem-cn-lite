@@ -2,7 +2,7 @@
   "name": "bem-cn-lite",
   "version": "3.0.0",
   "description": "Lite version of the friendly BEM-style class name generator, which is great for React",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf build",
