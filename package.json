@@ -9,7 +9,21 @@
     "prepublishOnly": "npm run build",
     "test": "tsc && mocha tests/*-spec.js"
   },
-  "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
+  "author": {
+    "name": "Vladimir Kuznetsov",
+    "email": "mistakster@gmail.com",
+    "url": "https://github.com/mistakster"
+  },
+  "contributors": [
+    {
+      "name": "Stanislav Eremenko",
+      "url": "https://github.com/c01nd01r"
+    },
+    {
+      "name": "Roman Fedorenkov",
+      "url": "https://github.com/SeqviriouM"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

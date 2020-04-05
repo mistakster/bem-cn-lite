@@ -11,7 +11,7 @@ It’s a wrapper function for [bem-cn](https://github.com/albburtsev/bem-cn) mod
 With Node.js:
 
 ```
-npm i --save bem-cn-lite
+npm install --save bem-cn-lite
 ```
 
 ## Usage
@@ -24,11 +24,11 @@ import block from 'bem-cn-lite';
 const b = block('button');
 ```
 
-`b` is a class name generator which was bind to `button`.
+`b` is a class name generator that was bind to a `button`.
  
 ### Block
 
-You can generate block-level class name with function `b`.
+You can generate a block-level class name with function `b`.
 
 If you provide an object as first argument, then it treats as modifiers for the block.
 
@@ -36,9 +36,9 @@ If you provide an object as first argument, then it treats as modifiers for the 
 // 'button'
 b(); 
 // 'button button_modifier'
-b({modifier: true});
+b({ modifier: true });
 // 'button button_modifier_value'
-b({modifier: 'value'});
+b({ modifier: 'value' });
 ```
 
 ### Element
@@ -49,9 +49,9 @@ First argument must be string. Second argument can be an object.
 // 'button__icon'
 b('icon'); 
 // 'button__icon button__icon_modifier'
-b('icon', {modifier: true});
+b('icon', { modifier: true });
 // 'button__icon button__icon_modifier_value'
-b('icon', {modifier: 'value'}); 
+b('icon', { modifier: 'value' }); 
 ```
 
 ### Mixin
@@ -62,7 +62,7 @@ Sometime, you might like to have a mixin on your block.
 // 'button mixin'
 b(null, 'mixin');
 // 'button button_modifier mixin'
-b({modifier: true}, 'mixin');
+b({ modifier: true }, 'mixin');
 ```
 
 Also, mixin on element is welcome too.
@@ -81,12 +81,14 @@ generator in rare case.
 
 ```js
 // 'block__icon is-loading icon'
-b.builder()('icon').is({'loading': true}).mix('icon').toString();
+b.builder()('icon').is({ 'loading': true }).mix('icon').toString();
 ```
 
 ### Custom settings
 
-You can use alternative naming schemes for your BEM naming convention. Just call static `setup` method on `bem-cn-lite` module:
+You can use alternative naming schemes for your BEM naming convention.
+Just call static `setup()` method on `bem-cn-lite` module and `reset()`
+to bring default back.
 
 ```js
 import block from 'bem-cn-lite';
@@ -102,14 +104,20 @@ block.setup({
 const b = block('button');
 
 // 'ns-button__icon ns-button__icon--modifier-value'
-b('icon', {modifier: 'value'});
-```
+b('icon', { modifier: 'value' });
 
-... and reset to default settings, if you need it.
-
-```js
 block.reset();
 
 // 'button__icon button__icon_modifier'
-b('icon', {modifier: true});
+b('icon', { modifier: true });
 ```
+
+## Contributors
+
+- [Vladimir Kuznetsov](https://github.com/mistakster)
+- [Stanislav Eremenko](https://github.com/c01nd01r)
+- [Roman Fedorenkov](https://github.com/SeqviriouM)
+
+## License
+
+MIT
