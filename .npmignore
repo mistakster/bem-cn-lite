@@ -4,3 +4,4 @@
 *.iml
 tests
 src
+tsconfig.json

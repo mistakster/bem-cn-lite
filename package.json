@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf build",
-    "prepublishOnly": "npm run build",
+    "prepublish": "npm run build",
     "test": "tsc && mocha tests/*-spec.js"
   },
   "author": {
