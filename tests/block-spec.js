@@ -8,7 +8,7 @@ const b = generator('block');
 
 describe('module', function () {
   it('should generate block', function () {
-    var block = b();
+    const block = b();
 
     block.should.equal('block');
   });
