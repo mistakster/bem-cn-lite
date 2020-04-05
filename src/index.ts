@@ -25,11 +25,7 @@ function bemClassNameLite(blockName: string) {
       modifiers = null;
     }
 
-    if (modifiers) {
-      result = b(elementName, modifiers);
-    } else {
-      result = elementName ? b(elementName) : b;
-    }
+    result = b(elementName, modifiers);
 
     if (mixin) {
       result = result.mix(mixin);
