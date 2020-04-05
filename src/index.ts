@@ -1,4 +1,4 @@
-import {setup as bemClassNameSetup, BemSettings} from 'bem-cn';
+import { setup as bemClassNameSetup, BemSettings } from 'bem-cn';
 
 interface Modifications {
   [name: string]: string | boolean | undefined;
@@ -43,11 +43,11 @@ function bemClassNameLite(blockName: string) {
   return element;
 }
 
-bemClassNameLite.setup = function(config: BemSettings) {
+bemClassNameLite.setup = function (config: BemSettings) {
   block = bemClassNameSetup(config);
 };
 
-bemClassNameLite.reset = function() {
+bemClassNameLite.reset = function () {
   block = bemClassNameSetup();
 };
 

@@ -13,7 +13,6 @@ describe('builder', function () {
     const builder = b.builder();
 
     builder().should.equal('block');
-
   });
 
   it('should has more methods', function () {
@@ -21,7 +20,7 @@ describe('builder', function () {
 
     builder.should.have.properties(['state', 'is', 'has', 'mix']);
 
-    builder('icon').is({'loading': true}).mix('icon').toString()
+    builder('icon').is({ 'loading': true }).mix('icon').toString()
       .should.equal('block__icon is-loading icon');
-  })
+  });
 });

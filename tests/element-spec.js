@@ -14,13 +14,13 @@ describe('module', function () {
   });
 
   it('should generate element with modifier', function () {
-    const element = b('element', {modifier: true});
+    const element = b('element', { modifier: true });
 
     element.should.equal('block__element block__element_modifier');
   });
 
   it('should generate element with modifier and value', function () {
-    const element = b('element', {modifier: 'value'});
+    const element = b('element', { modifier: 'value' });
 
     element.should.equal('block__element block__element_modifier_value');
   });
@@ -32,7 +32,7 @@ describe('module', function () {
   });
 
   it('should generate element with modifier and mixin', function () {
-    const element = b('element', {modifier: 'value'}, 'mixin');
+    const element = b('element', { modifier: 'value' }, 'mixin');
 
     element.should.equal('block__element block__element_modifier_value mixin');
   });

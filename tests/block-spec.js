@@ -14,13 +14,13 @@ describe('module', function () {
   });
 
   it('should generate block with modifier', function () {
-    const block = b({modifier: true});
+    const block = b({ modifier: true });
 
     block.should.equal('block block_modifier');
   });
 
   it('should generate block with modifier and value', function () {
-    const block = b({modifier: 'value'});
+    const block = b({ modifier: 'value' });
 
     block.should.equal('block block_modifier_value');
   });
@@ -38,7 +38,7 @@ describe('module', function () {
   });
 
   it('should generate block with modifier and mixin', function () {
-    const block = b({modifier: 'value'}, 'mixin');
+    const block = b({ modifier: 'value' }, 'mixin');
 
     block.should.equal('block block_modifier_value mixin');
   });
