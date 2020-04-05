@@ -19,9 +19,9 @@ npm i --save bem-cn-lite
 ### Generator 
 
 ```js
-var block = require('bem-cn-lite');
+import block from 'bem-cn-lite';
 
-var b = block('button');
+const b = block('button');
 ```
 
 `b` is a class name generator which was bind to `button`.
@@ -60,7 +60,7 @@ Sometime, you might like to have a mixin on your block.
 
 ```js
 // 'button mixin'
-b(false, 'mixin');
+b(null, 'mixin');
 // 'button button_modifier mixin'
 b({modifier: true}, 'mixin');
 ```
@@ -80,8 +80,8 @@ It might you’d like to have an access to original methods of the `bem-cn`
 generator in rare case.
 
 ```js
-// 'block__icon icon is-loading'
-b.builder()('icon').is({'loading': true}).mix('icon')()
+// 'block__icon is-loading icon'
+b.builder()('icon').is({'loading': true}).mix('icon').toString();
 ```
 
 ### Custom settings
@@ -89,7 +89,7 @@ b.builder()('icon').is({'loading': true}).mix('icon')()
 You can use alternative naming schemes for your BEM naming convention. Just call static `setup` method on `bem-cn-lite` module:
 
 ```js
-var block = require('bem-cn-lite');
+import block from 'bem-cn-lite';
 
 // Two Dashes style with namespaces
 block.setup({
@@ -98,6 +98,8 @@ block.setup({
   mod: '--',
   modValue: '-'
 });
+
+const b = block('button');
 
 // 'ns-button__icon ns-button__icon--modifier-value'
 b('icon', {modifier: 'value'});

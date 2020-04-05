@@ -2,9 +2,12 @@
   "name": "bem-cn-lite",
   "version": "3.0.0",
   "description": "Lite version of the friendly BEM-style class name generator, which is great for React",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "mocha tests/*-spec.js"
+    "build": "tsc",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run build",
+    "test": "tsc && mocha tests/*-spec.js"
   },
   "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
   "license": "MIT",
@@ -22,10 +25,11 @@
     "modifier"
   ],
   "dependencies": {
-    "bem-cn": "2.1.x"
+    "bem-cn": "^3.0.1"
   },
   "devDependencies": {
     "mocha": "^7.1.1",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "typescript": "^3.8.3"
   }
 }
