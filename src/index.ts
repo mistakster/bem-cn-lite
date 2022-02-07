@@ -6,23 +6,32 @@ interface Modifications {
 
 let block = bemClassNameSetup();
 
+function isString(data: any) {
+  return typeof data === 'string';
+}
+
+function hasMixinShape(data: any) {
+  return isString(data) || (Array.isArray(data) && data.every(isString));
+}
+
+
 function bemClassNameLite(blockName: string) {
   const b = block(blockName);
 
-  function element(elementName: string, modifiers: Modifications | null, mixin?: string): string;
-  function element(elementName: string, mixin?: string): string;
+  function element(elementName: string, modifiers: Modifications | null, mixin?: string | string[]): string;
+  function element(elementName: string, mixin?: string | string[]): string;
   function element(elementName: string, modifiers: Modifications): string;
-  function element(mods: Modifications | null, mixin?: string): string;
+  function element(mods: Modifications | null, mixin?: string | string[]): string;
   function element(elementName: string): string;
   function element(mods: Modifications | null): string;
   function element(): string;
-
+  
   function element(...args: any) {
     const elementName = args.shift();
     let [modifiers, mixin] = args;
     let result;
 
-    if (typeof elementName !== 'string' || typeof modifiers === 'string') {
+    if (typeof elementName !== 'string' || hasMixinShape(modifiers)) {
       mixin = modifiers;
       modifiers = null;
     }
