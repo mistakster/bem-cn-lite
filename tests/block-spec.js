@@ -31,15 +31,33 @@ describe('module', function () {
     block.should.equal('block mixin');
   });
 
+  it('should generate block with multiple mixins', function () {
+    const block = b(null, ['mixin', 'nixim']);
+
+    block.should.equal('block mixin nixim');
+  });
+
   it('should generate block with mixin if an empty object is provided as modifiers', function () {
     const block = b({}, 'mixin');
 
     block.should.equal('block mixin');
   });
 
+  it('should generate block with multiple mixins if an empty object is provided as modifiers', function () {
+    const block = b({}, ['mixin', 'nixim']);
+
+    block.should.equal('block mixin nixim');
+  });
+
   it('should generate block with modifier and mixin', function () {
     const block = b({ modifier: 'value' }, 'mixin');
 
     block.should.equal('block block_modifier_value mixin');
+  });
+
+  it('should generate block with modifier and mixin', function () {
+    const block = b({ modifier: 'value' }, ['mixin', 'nixim']);
+
+    block.should.equal('block block_modifier_value mixin nixim');
   });
 });
