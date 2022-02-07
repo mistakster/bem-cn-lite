@@ -6,11 +6,11 @@ interface Modifications {
 
 let block = bemClassNameSetup();
 
-function isString(data: any) {
+function isString(data: any): boolean {
   return typeof data === 'string';
 }
 
-function hasMixinShape(data: any) {
+function hasMixinShape(data: any): boolean {
   return isString(data) || (Array.isArray(data) && data.every(isString));
 }
 
