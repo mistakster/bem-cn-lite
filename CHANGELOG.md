@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.1.0
+
+- Added support of the multiple mixins
+
 ## 4.0.0
 
 - Source code re-written with TypeScript. Added built-in typings.
