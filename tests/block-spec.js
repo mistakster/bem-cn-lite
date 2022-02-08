@@ -55,7 +55,7 @@ describe('module', function () {
     block.should.equal('block block_modifier_value mixin');
   });
 
-  it('should generate block with modifier and mixin', function () {
+  it('should generate block with modifier and mixins', function () {
     const block = b({ modifier: 'value' }, ['mixin', 'nixim']);
 
     block.should.equal('block block_modifier_value mixin nixim');
