@@ -31,9 +31,21 @@ describe('module', function () {
     element.should.equal('block__element mixin');
   });
 
+  it('should generate element with mixins', function () {
+    const element = b('element', ['mixin', 'nixim']);
+
+    element.should.equal('block__element mixin nixim');
+  });
+
   it('should generate element with modifier and mixin', function () {
     const element = b('element', { modifier: 'value' }, 'mixin');
 
     element.should.equal('block__element block__element_modifier_value mixin');
+  });
+
+  it('should generate element with modifier and mixins', function () {
+    const element = b('element', { modifier: 'value' }, ['mixin', 'nixim']);
+
+    element.should.equal('block__element block__element_modifier_value mixin nixim');
   });
 });
