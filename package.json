@@ -1,6 +1,6 @@
 {
   "name": "bem-cn-lite",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Lite version of the friendly BEM-style class name generator, which is great for React",
   "main": "lib/index.js",
   "scripts": {
